@@ -1,5 +1,8 @@
 {
     "secret_id": "",
     "secret_value": "",
-    "client_id": ""
+    "client_id": "",
+    "user": ""
 }
+
+

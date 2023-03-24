@@ -58,6 +58,7 @@ app.post("/getToken", (request, response) => {
     var connectedAppClientId = config.get("client_id");
     var connectedAppSecretKey = config.get("secret_value");
     var connectedAppSecretId = config.get("secret_id");
+    var user = config.get("user");
 
     var attributesFromClient = request.body;
     var claims = {
@@ -65,7 +66,7 @@ app.post("/getToken", (request, response) => {
         exp: Math.floor(Date.now() / 1000) + (9 * 60),
         jti: uuidv4(),
         aud: "tableau",
-        sub: "abac",
+        sub: user,
         scp: ["tableau:views:embed"],
         ...attributesFromClient
     };
